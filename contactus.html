@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVELY PROFESSTIONAL UNIVERSITY</title>
+    <link rel="stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=poppins:wght@100;200;300;400;600;700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" > 
+
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="logo.png.jpg"> </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about us.html">ABOUT</a></li>
+                    <li><a href="our courses.html">COURSE</a></li>
+                    <li><a href="calender.html">CALENDER</a></li>
+                    <li><a href="Login.html">LOGIN</a></li>
+                    <li><a href="contactus.html">CONTACT</a></li>
+                    
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>contact us</h1>
+        
+    </section>
+
+    <!------------------------contact us ---->
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1750517.5864517696!2d75.4110207!3d31.026816300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391964aa569e7355%3A0x8fbd263103a38861!2sPunjab!5e0!3m2!1sen!2sin!4v1701348535209!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+
+    <section class="contact-us">
+
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i> 
+                    <span>
+                        <h5>XYZ road,ABC Building</h5>
+                        <p>Bangalore,karnataka, IN</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i> 
+                    <span>
+                        <h5>+1 0123456789</h5>
+                        <p>Monday to friday, 10am to6pm </p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-home"></i> 
+                    <span>
+                        <h5>info@easytutorialpro.com</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="formholder.phd" method="post">
+                    <input type="text"  name="name" placeholder="Enter your name"requried>
+                    <input type="email" name="email" placeholder="Enter Email address"requried>
+                    <input type="text" name="subject" placeholder="Enter your subject"requried>
+                    <textarea rows="8" name="message" placeholder="Message"requried></textarea>
+                    <button type="submit" class="hero-btn red-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+        <!---footer-->
+
+<section class="footer">
+    <h4>about us</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis ipsa dicta <br>atque, distinctio corrupti dolorem explicabo doloribus recusandae? Atque sapiente ipsam maxime at mollitia fugit asperiores ducimus, eligendi eos.</p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+    </div>
+    <p>made with<i class="fa fa-heart-o"></i>easy tutorials</p>
+</section>
+<!---------------------- javascript -->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200";
+
+    }
+</script>
+
+</body>
+</html>
