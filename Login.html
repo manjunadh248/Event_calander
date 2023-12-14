@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Authentication Pages</title> -->
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOVELY PROFESSTIONAL UNIVERSITY</title>
+    <title>LOVELY PROFESSIONAL UNIVERSITY</title>
     <link rel="stylesheet" href = "style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=poppins:wght@100;200;300;400;600;700&display=swap"
@@ -14,7 +20,7 @@
 <body>
     <section class="header">
         <nav>
-            <a href="index.html"><img src="logo.png.jpg"> </a>
+            <a href="index.html"><img src="logo.png"> </a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
@@ -29,114 +35,215 @@
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-        <h1></h1>
+        <section class="loginsection">
+
+            <div class="container" id="signup-container">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
         
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="password">Password (min. 8 characters):</label>
+                    <input type="password" id="password" name="password" required>
+        
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+        
+                    <button type="button" onclick="signup()">Sign Up</button>
+                </form>
+                <p id="error-message" class="error-message"></p>
+        
+                <p>Already have an account? <a href="#" onclick="showSignin()">Sign In</a></p>
+            </div>
+        
+            <!-- Signin Page -->
+            <div class="container" id="signin-container" style="display: none;">
+                <h2>Sign In</h2>
+                <form id="signinForm">
+                    <label for="signin-email">Email:</label>
+                    <input type="email" id="signin-email" name="signin-email" required>
+        
+                    <label for="signin-password">Password (min. 8 characters):</label>
+                    <input type="password" id="signin-password" name="signin-password" required>
+        
+                    <button type="button" onclick="signin()">Sign In</button>
+                </form>
+                <p id="signin-error-message" class="error-message"></p>
+        
+                <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+            </div>
+        </section>
     </section>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('https://cutewallpaper.org/28/cool-tomorrowland-wallpaper/168588994.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-        }
-        h1 {
-            text-align: center;
-            
-            
-        }
-        
-        .form {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        .toggle-form {
-            margin-top: 20px;
-            color: #fff;
-            cursor: pointer;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        
-        <h1 style="color:rgb(10, 10, 15);"></h1>
-     
-        <div class="form" id="login-form">
-            <h2>Login</h2>
-            <form action="login.php" method="post">
-                <input type="text" name="username" placeholder="Username" required><br>
-                <input type="password" name="password" placeholder="Password" required><br>
-                <input type="submit" value="Login">
-            </form>
-            <p class="toggle-form" id="toggle-signup">Don't have an account? Sign Up</p>
-        </div>
-        <div class="form" id="signup-form" style="display: none;">
-            <h2>Sign Up</h2>
-            <form action="signup.php" method="post">
-                <input type="text" name="username" placeholder="Username" required><br>
-                <input type="email" name="email" placeholder="Email" required><br>
-                <input type="tel" name="phone" placeholder="Mobile Number" required><br>
-                <input type="password" name="password" placeholder="Password" required><br>
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
-                <input type="submit" value="Sign Up">
-            </form>
-            <p class="toggle-form" id="toggle-login">Already have an account? Login</p>
-        </div>
-    </div>
-    <script>
-        const loginForm = document.getElementById('login-form');
-        const signupForm = document.getElementById('signup-form');
-        const toggleSignup = document.getElementById('toggle-signup');
-        const toggleLogin = document.getElementById('toggle-login');
 
-        toggleSignup.addEventListener('click', () => {
-            loginForm.style.display = 'none';
-            signupForm.style.display = 'block';
-        });
-
-        toggleLogin.addEventListener('click', () => {
-            loginForm.style.display = 'block';
-            signupForm.style.display = 'none';
-        });
-    </script>
+    
 </body>
+
+    <style>
+        /* Common Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* background-image: url(campus.png.jpg); */
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
+        }
+
+        /* Additional Styles if Needed */
+        /* Add your custom styles here */
+    </style>
+
+
+    <!-- Signup Page -->
+    
+
+    <script>
+        function signup() {
+            var fullname = document.getElementById('fullname').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var errorMessage = document.getElementById('error-message');
+
+            if (fullname.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+                errorMessage.textContent = 'Please fill in all required fields.';
+            } else if (password.length < 8) {
+                errorMessage.textContent = 'Password must be at least 8 characters.';
+            } else if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match.';
+            } else {
+                // Clear any previous error messages
+                errorMessage.textContent = '';
+
+                // Send the signup data to the server (replace this with your server endpoint)
+                fetch('your-server-endpoint-for-signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        fullname: fullname,
+                        email: email,
+                        password: password,
+                    }),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Successful signup
+                        alert('Signup successful!'); // You may want to redirect the user to the login page
+                        showSignin(); // Automatically switch to the signin page after successful signup
+                    } else {
+                        // Handle signup failure
+                        alert('Signup successful!');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during signup:', error);
+                    alert('An unexpected error occurred. Please try again later.');
+                });
+            }
+        }
+
+        function signin() {
+            var email = document.getElementById('signin-email').value;
+            var password = document.getElementById('signin-password').value;
+            var errorMessage = document.getElementById('signin-error-message');
+
+            if (email.trim() === '' || password.trim() === '') {
+                errorMessage.textContent = 'Please fill in all required fields.';
+            } else if (password.length < 8) {
+                errorMessage.textContent = 'Password must be at least 8 characters.';
+            } else {
+                // Clear any previous error messages
+                errorMessage.textContent = '';
+
+                // Send the signin data to the server (replace this with your server endpoint)
+                fetch('your-server-endpoint-for-signin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                    }),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Successful signin
+                        alert('Signin successful!');
+                        // You may want to redirect the user to the home page or another page
+                        window.location.href = 'your-home-page.html';
+                    } else {
+                        // Handle signin failure
+                        a = confirm('Signin successful!');
+                        
+                        if (a==1){
+                            window.location.href = './index.html'
+                        }
+
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during signin:', error);
+                    alert('An unexpected error occurred. Please try again later.');
+                });
+            }
+        }
+
+        function showSignin() {
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('signin-container').style.display = 'block';
+        }
+
+        function showSignup() {
+            document.getElementById('signin-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'block';
+        }
+    </script>
 </html>

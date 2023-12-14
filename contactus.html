@@ -14,7 +14,7 @@
 <body>
     <section class="sub-header">
         <nav>
-            <a href="index.html"><img src="logo.png.jpg"> </a>
+            <a href="index.html"><img src="logo.png"> </a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
@@ -67,12 +67,16 @@
                 </div>
             </div>
             <div class="contact-col">
-                <form action="formholder.phd" method="post">
+                <form action="mailto:simanju2877@gmail.com" method="post">
                     <input type="text"  name="name" placeholder="Enter your name"requried>
                     <input type="email" name="email" placeholder="Enter Email address"requried>
                     <input type="text" name="subject" placeholder="Enter your subject"requried>
                     <textarea rows="8" name="message" placeholder="Message"requried></textarea>
                     <button type="submit" class="hero-btn red-btn">Send Message</button>
+                    <!-- <div id="successMessage" style="display: none;">
+                        Your message has been sent successfully!
+                    </div>
+                     -->
                 </form>
             </div>
         </div>
@@ -94,7 +98,7 @@
 </section>
 <!---------------------- javascript -->
 
-<script>
+<!-- <script>
     var navLinks = document.getElementById("navLinks");
 
     function showMenu(){
@@ -105,7 +109,57 @@
         navLinks.style.right = "-200";
 
     }
-</script>
+</script> -->
+
+
+<!-- <script>
+    var navLinks = document.getElementById("navLinks");
+    var contactForm = document.getElementById("contactForm");
+    var successMessage = document.getElementById("successMessage");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200";
+    }
+
+    // Function to handle form submission
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Assuming you have a function to handle the form submission, you can use AJAX or other methods here.
+        // For simplicity, let's assume the form is always successfully submitted.
+        // You can replace the setTimeout function with your actual form submission logic.
+
+        // Simulate a successful form submission
+        setTimeout(function () {
+            // Display the success message
+            successMessage.style.display = "block";
+
+            // Reset the form fields (optional)
+            contactForm.reset();
+        }, 1000); // Adjust the timeout as needed
+    });
+</script> -->
+
+
+<button type="submit" onclick="auth()">Submit</button>
+        </form>
+    </div>
+    <script>
+        function auth(){
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var feedback = document.getElementById("feedback").value;
+            window.location.assign("index.html");
+            alert("Thanks for your valiable response");
+
+                
+            
+        }
+    </script>
 
 </body>
 </html>

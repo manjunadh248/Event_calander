@@ -74,7 +74,7 @@ function initCalendar() {
   let days = "";
 
   for (let x = day; x > 0; x--) {
-    days += <div class="day prev-date">${prevDays - x + 1}</div>;
+    days += `<div class="day prev-date">${prevDays - x + 1}</div>`;
   }
 
   for (let i = 1; i <= lastDate; i++) {
@@ -98,21 +98,21 @@ function initCalendar() {
       getActiveDay(i);
       updateEvents(i);
       if (event) {
-        days += <div class="day today active event">${i}</div>;
+        days += `<div class="day today active event">${i}</div>`;
       } else {
-        days += <div class="day today active">${i}</div>;
+        days += `<div class="day today active">${i}</div>`;
       }
     } else {
       if (event) {
-        days += <div class="day event">${i}</div>;
+        days += `<div class="day event">${i}</div>`;
       } else {
-        days += <div class="day ">${i}</div>;
+        days += `<div class="day ">${i}</div>`;
       }
     }
   }
 
   for (let j = 1; j <= nextDays; j++) {
-    days += <div class="day next-date">${j}</div>;
+    days += `<div class="day next-date">${j}</div>`;
   }
   daysContainer.innerHTML = days;
   addListner();
@@ -288,24 +288,8 @@ addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
 
-function defineProperty() {
-  var osccred = document.createElement("div");
 
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
-  osccred.style.color = "#ccc";
-  osccred.style.fontFamily = "sans-serif";
-  osccred.style.padding = "5px";
-  osccred.style.background = "#fff";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px #ccc";
-  document.body.appendChild(osccred);
-}
 
-defineProperty();
 
 //allow only time in eventtime from and to
 addEventFrom.addEventListener("input", (e) => {
@@ -471,5 +455,5 @@ function convertTime(time) {
   let timeFormat = timeHour >= 12 ? "PM" : "AM";
   timeHour = timeHour % 12 || 12;
   time = timeHour + ":" + timeMin + " " + timeFormat;
-  return time;
+  return time;
 }
